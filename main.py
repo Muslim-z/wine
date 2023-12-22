@@ -7,8 +7,12 @@ import pandas
 from _collections import defaultdict
 
 
-def determine_the_age_ending(starting_year):
+def determine_start_year(starting_year):
     age = datetime.now().year - starting_year
+    return age
+
+
+def determine_the_age_ending(age):
     if age % 100 in (11, 12, 13, 14):
         return f'{age} лет'
     elif age % 10 == 1:
@@ -46,7 +50,7 @@ def save_index_file(content, path_html):
 def main():
     load_dotenv()
     starting_year = 1920
-    age_data = determine_the_age_ending(starting_year)
+    age_data = determine_the_age_ending(determine_start_year(starting_year))
     excel_file_path = 'wine3.xlsx'
     wine_data = get_excel_wines(excel_file_path)
     data_to_render = {
