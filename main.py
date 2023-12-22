@@ -51,7 +51,9 @@ def main():
     load_dotenv()
     starting_year = 1920
     age_data = determine_the_age_ending(determine_start_year(starting_year))
-    excel_file_path = 'wine3.xlsx'
+    excel_file_path = input('Напишите путь к файлу ')
+    if not excel_file_path:
+        excel_file_path = 'wine3.xlsx'
     wine_data = get_excel_wines(excel_file_path)
     data_to_render = {
         'age': age_data,
