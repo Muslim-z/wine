@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from datetime import datetime
 import pandas
 from _collections import defaultdict
-from pprint import pprint
 
 
 def determine_the_age_ending(starting_year):
