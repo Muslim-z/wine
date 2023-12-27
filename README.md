@@ -12,7 +12,7 @@
 2. Установите Python 3.
 3. Скачайте файл с зависимостями командой:
 ```
-   pip install requirments
+   pip install requirments.txt
   ```
 4. Запустите сайт командой:
 ```
