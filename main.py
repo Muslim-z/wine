@@ -1,9 +1,10 @@
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+import pandas
+import os
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from dotenv import load_dotenv
 from datetime import datetime
-import pandas
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 from _collections import defaultdict
 
 
@@ -51,9 +52,7 @@ def main():
     load_dotenv()
     starting_year = 1920
     age_data = determine_the_age_ending(determine_start_year(starting_year))
-    excel_file_path = input('Напишите путь к файлу ')
-    if not excel_file_path:
-        excel_file_path = 'wine3.xlsx'
+    excel_file_path = os.getenv('EXCEL_FILE_PATH')
     wine_data = get_excel_wines(excel_file_path)
     data_to_render = {
         'age': age_data,
