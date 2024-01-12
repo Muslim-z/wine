@@ -16,7 +16,7 @@ EXCEL_FILE_PATH='ваш_путь'
 ```
 4. Скачайте файл с зависимостями командой:
 ```
-   pip install requirments.txt
+   pip install -r requirments.txt
   ```
 5. Запустите сайт командой:
 ```
